@@ -1,0 +1,90 @@
+name: Publish APT
+on:
+  workflow_dispatch:
+# Full reconciliation makes replacement of pending runs safe.
+concurrency:
+  group: apt-publish
+  cancel-in-progress: false
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+jobs:
+  publish:
+    runs-on: ubuntu-22.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y apt-utils dpkg-dev
+
+      - name: Restore durable package store
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin apt-data; then
+            git fetch origin apt-data
+            git worktree add site FETCH_HEAD
+          else
+            status=$?
+            test "$status" = 2
+            mkdir site
+            git -C site init -b apt-data
+          fi
+      - name: Reconcile release packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/sync.py
+
+      - name: Sign metadata
+        env:
+          APT_GPG_PRIVATE_KEY: ${{ secrets.APT_GPG_PRIVATE_KEY }}
+          APT_GPG_PASSPHRASE: ${{ secrets.APT_GPG_PASSPHRASE }}
+          APT_GPG_FINGERPRINT: ${{ vars.APT_GPG_FINGERPRINT }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          export GNUPGHOME
+          GNUPGHOME=$(mktemp -d)
+          trap 'rm -rf "$GNUPGHOME"' EXIT
+          printf '%s' "$APT_GPG_PRIVATE_KEY" | gpg --batch --import
+          bash scripts/index.sh site
+
+      - name: Test signed repository and installation
+        run: |
+          docker run --rm -v "$PWD/site:/repo:ro" ubuntu:22.04 bash -euxc '
+            cp /repo/rusty.asc /etc/apt/trusted.gpg.d/rusty.asc
+            echo "deb [signed-by=/etc/apt/trusted.gpg.d/rusty.asc] file:/repo stable main" > /etc/apt/sources.list.d/rusty.list
+            apt-get update
+            packages=$(find /repo/pool -name "*.deb" -exec dpkg-deb -f {} Package \; | sort -u)
+            apt-get install -y $packages
+            for package in $packages; do test -x /usr/bin/$package; done
+          '
+      - name: Save durable package store before deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C site config user.name 'github-actions[bot]'
+          git -C site config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git -C site add pool dists rusty.asc .nojekyll
+          git -C site diff --cached --quiet && exit 0
+          git -C site commit -m 'Update signed APT repository'
+          # First run uses an independent repo; later runs use a worktree.
+          if test -d site/.git; then
+            git fetch ./site apt-data
+            git push origin FETCH_HEAD:refs/heads/apt-data
+          else
+            git push origin "$(git -C site rev-parse HEAD):refs/heads/apt-data"
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

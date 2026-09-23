@@ -1,0 +1,16 @@
+name: Validate repository tooling
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v7
+      - run: sudo apt-get update && sudo apt-get install -y apt-utils dpkg-dev shellcheck
+      - run: shellcheck scripts/*.sh
+      - run: python3 tests/test_repository.py
