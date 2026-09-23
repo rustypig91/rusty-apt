@@ -1,0 +1,240 @@
+Package: pigtail
+Version: 0.10.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 19038
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.10.0-1_amd64.deb
+Size: 6402892
+MD5sum: 9cf396bfe35603b567eb57f8fa10fa6f
+SHA1: 1897f116de7e483b58daf7e299cd4fb7bde6413b
+SHA256: 18578b5a65ea4ff3a476f8f845cb206b251c36847dbd5c08d0354f1949230d6d
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.11.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 19266
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.11.0-1_amd64.deb
+Size: 6461352
+MD5sum: 0c3d49f1437b077cf8932fa80d476892
+SHA1: 63bdfd0554fdbc5aa91184df8111d498eb895a17
+SHA256: ce6ef2d45d551c0d0ec31683f2e7986c2293139eddd9ef9c64b6ce64d2c5b339
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.12.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 19295
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.12.0-1_amd64.deb
+Size: 6469864
+MD5sum: 2772df6a9aa62aae36d942665a8d36f8
+SHA1: 05851876d72c45e6f68d25bd0b87c3da3c4f1070
+SHA256: 0f1379dfebe20598c6751f677300d2b6c05e8f0c5f9741b93da96e084089c99a
+Section: electronics
+Priority: optional
+Description: A desktop serial terminal.
+ Rusty's Pigtail is a serial terminal built around the parts of serial debugging
+ that cause pain: reconnecting to a target by USB device identity rather than
+ port path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.12.1-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 19290
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.12.1-1_amd64.deb
+Size: 6469020
+MD5sum: fcf3fc1f98d878d47e061306a59becfa
+SHA1: 677b740ce5ecc928bee12727878852de6280ffa0
+SHA256: 0d9f66ba4cb7c0d0fdc49d851b54fac6957161775e8855beb3ffc90805f1667f
+Section: electronics
+Priority: optional
+Description: A desktop serial terminal.
+ Rusty's Pigtail is a serial terminal built around the parts of serial debugging
+ that cause pain: reconnecting to a target by USB device identity rather than
+ port path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.2.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 18398
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.2.0-1_amd64.deb
+Size: 6205236
+MD5sum: 8d96089ee935534c832892ea7321ddb5
+SHA1: 68596bc504d18cae1e9d3a8ff9137e736e490a9d
+SHA256: 6b076e0cc40c535fdb8a45939fea285b38e2581513b152833b3af653f8f15882
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.3.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 18399
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.3.0-1_amd64.deb
+Size: 6204508
+MD5sum: 593464174c43d2b1d848dcab54fc8770
+SHA1: 86086d987fa0ad6a2aba85deb5996e826fb83a62
+SHA256: 37712d4271660e89c67a5a8765a36a8e4f6369786b613a4b4a4b8dc76f48647b
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.4.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 18451
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.4.0-1_amd64.deb
+Size: 6222680
+MD5sum: 77b1ff74f29cc5e7b6579a2e8a82811b
+SHA1: bd747be0f0f681c4942c10d8ececcafb647ecc31
+SHA256: 7f595532f0edf7c28cb394be86175942d947bef4a393ac8d8a6167733c82da81
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.5.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 18485
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.5.0-1_amd64.deb
+Size: 6240452
+MD5sum: 4c2618bdd4399bc8b844e661c46509bc
+SHA1: cf01357b395848d079728d963822f99dffece298
+SHA256: 98c336dcfdfea96442a07c875b17575be8f36a39494335e5a3fc8d57baa24ea3
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.6.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 18442
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.6.0-1_amd64.deb
+Size: 6237040
+MD5sum: f17c16acda80e057b639c46805fa78dd
+SHA1: b0f32c8513dd2f5531923fade1b9fd4b03e52a6a
+SHA256: b39c039d929b88eee5b5d820b9f59b5ce1f5aaa6494aed13688479eb7d06bfba
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.7.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 18553
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.7.0-1_amd64.deb
+Size: 6273708
+MD5sum: 783e6f892bc1b4e9b6a6112ac151caea
+SHA1: 760367533eff0eab1fb97d74d3415dcec229adbd
+SHA256: b9865c8ade0a0997bed5eae374406f2fc1bc3c86685c3aa97a36a0666a0f054f
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.8.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 18580
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.8.0-1_amd64.deb
+Size: 6281192
+MD5sum: c5613fbf0a6b71e547cbe953b57d1d77
+SHA1: 8fd82518fd82f551d5b02d95d4d62e6330544e6d
+SHA256: f9db1ea5fd9cda209a847ac2eba2b7792f595e152965b60ae6b0120e740d110b
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
+Version: 0.9.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 18919
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.9.0-1_amd64.deb
+Size: 6363544
+MD5sum: 0aabd537e9d61a748d907d11d0c8913d
+SHA1: 7ca6e3b9f47d108c035d58411c856d11e65077ed
+SHA256: 59b760c6502959a60bdc8410988eb554a8acfe5203e7b0aab64aa1077d60ed5b
+Section: electronics
+Priority: optional
+Description: Desktop serial terminal for embedded firmware development.
+ Pigtail is a serial terminal built around the parts of firmware debugging that
+ cause pain: reconnecting to a target by USB device identity rather than port
+ path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
