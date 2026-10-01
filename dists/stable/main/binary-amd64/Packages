@@ -176,6 +176,26 @@ Description: A desktop serial terminal.
  continuous capture of raw bytes to disk.
 
 Package: pigtail
+Version: 0.14.2-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 19432
+Depends: libc6 (>= 2.35), libudev1 (>= 183), libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/p/pigtail/pigtail_0.14.2-1_amd64.deb
+Size: 6536228
+MD5sum: 1f8aadb7359034976daa084c7398f2d9
+SHA1: 6459123e1293901796dc40b3ac4b2bbb74dd3286
+SHA256: a4dbb969265716abb3a4d08283e29be22cc76473ba2a7a5afd19dac95cb9a5e6
+Section: electronics
+Priority: optional
+Description: A desktop serial terminal.
+ Rusty's Pigtail is a serial terminal built around the parts of serial debugging
+ that cause pain: reconnecting to a target by USB device identity rather than
+ port path, filtering that applies retroactively to captured scrollback, live
+ plotting of numeric values linked back to the log lines that produced them, and
+ continuous capture of raw bytes to disk.
+
+Package: pigtail
 Version: 0.2.0-1
 Architecture: amd64
 Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
