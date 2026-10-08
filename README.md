@@ -82,9 +82,7 @@ Every run lists **all** stable releases from the three explicitly allowlisted so
 `rustypig91/snout-firmware-explorer`),
 including paginated results, and imports canonical `.deb` assets. Stable tags
 must be `vMAJOR.MINOR.PATCH` (or without `v`). Prereleases and build metadata are
-excluded rather than guessing Debian ordering. Snout imports begin at v0.6.0;
-earlier alpha packages install `firmware-gui` instead of `/usr/bin/snout` and
-are skipped. Existing package versions are
+excluded rather than guessing Debian ordering. Existing package versions are
 retained on `apt-data`; equal identity/version/architecture with different bytes
 fails instead of silently replacing packages. Never rebuild and overwrite a
 published version: release a new version. Pool filenames come from validated
