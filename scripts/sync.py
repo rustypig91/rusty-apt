@@ -9,7 +9,11 @@ import tarfile
 import tempfile
 import urllib.request
 
-SOURCES = {'pigtail': 'rustypig91/pigtail-serial-console', 'canvaz': 'rustypig91/canvaz'}
+SOURCES = {
+    'pigtail': 'rustypig91/pigtail-serial-console',
+    'canvaz': 'rustypig91/canvaz',
+    'snout': 'rustypig91/snout-firmware-explorer',
+}
 
 
 def run(*args):

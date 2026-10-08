@@ -1,6 +1,6 @@
 # Rusty APT
 
-Signed Ubuntu packages for pigtail and canvaz, reusing their GitHub Release
+Signed Ubuntu packages for pigtail, canvaz and snout, reusing their GitHub Release
 Debian assets. Intended URL: https://rustypig91.github.io/rusty-apt/ (available
 after owner setup and the first successful deployment).
 
@@ -12,11 +12,13 @@ curl -fsSL https://rustypig91.github.io/rusty-apt/rusty.asc | sudo tee /etc/apt/
 sudo chmod 644 /etc/apt/keyrings/rusty.asc
 echo 'deb [signed-by=/etc/apt/keyrings/rusty.asc] https://rustypig91.github.io/rusty-apt stable main' | sudo tee /etc/apt/sources.list.d/rusty.list
 sudo apt update
-sudo apt install pigtail canvaz
+sudo apt install pigtail canvaz snout
 ```
 
 Use `sudo apt update && sudo apt upgrade` for upgrades. Remove applications
-with `sudo apt remove pigtail canvaz`. Separately remove the source with:
+with `sudo apt remove pigtail canvaz snout`. Snout can be installed separately
+with `sudo apt install snout`; launch it from the desktop menu or run `snout`.
+Separately remove the source with:
 
 ```bash
 sudo rm -f /etc/apt/sources.list.d/rusty.list /etc/apt/keyrings/rusty.asc
@@ -27,7 +29,7 @@ sudo apt update
 
 1. Create an empty public GitHub repository `rustypig91/rusty-apt`. Commit these
    files on `main`, add `https://github.com/rustypig91/rusty-apt.git` as origin,
-   and push. Commit and push the companion changes in both application repos.
+   and push. Commit and push any companion dispatch changes in the application repos.
 2. In Settings → Pages select **GitHub Actions** as the source. Enable Actions.
    Allow the publishing workflow's explicit `contents: write`, `pages: write`,
    and `id-token: write` permissions. Permit its GITHUB_TOKEN to push the
@@ -63,19 +65,21 @@ sudo apt update
    asset; release the updated Canvaz to make its canonical asset available.
    Existing legacy Canvaz display-title assets are intentionally skipped.
 7. Test the install commands above in a clean Ubuntu 22.04 amd64 VM/container.
-   Confirm `test -x /usr/bin/pigtail` and `test -x /usr/bin/canvaz`.
+   Confirm `test -x /usr/bin/pigtail`, `test -x /usr/bin/canvaz` and
+   `test -x /usr/bin/snout`.
    The workflow already tests signed APT update and installation in Ubuntu
    before saving or deploying metadata. It does not launch GUI applications.
 
 ## Operation and retention
 
-The existing application workflows dispatch publication only after all release
-jobs succeed on a version tag. Branch/manual draft builds do not dispatch.
-A six-hour reconciliation schedule recovers missed dispatches, partially
-completed releases, and externally published releases. GitHub schedules may be
-delayed or disabled for inactive repositories; manual dispatch is the recovery.
+The Pigtail, Canvaz and Snout application workflows dispatch publication only after all
+release jobs succeed on a version tag. Branch/manual draft builds do not dispatch.
+Run **Publish APT** manually to recover missed dispatches, partially completed
+releases, and externally published releases.
 
-Every run lists **all** stable releases from both explicitly allowlisted sources,
+Every run lists **all** stable releases from the three explicitly allowlisted sources
+(`rustypig91/pigtail-serial-console`, `rustypig91/canvaz` and
+`rustypig91/snout-firmware-explorer`),
 including paginated results, and imports canonical `.deb` assets. Stable tags
 must be `vMAJOR.MINOR.PATCH` (or without `v`). Prereleases and build metadata are
 excluded rather than guessing Debian ordering. Existing package versions are
@@ -92,7 +96,7 @@ Current application workflows build amd64; additional native architecture
 installation tests should be added when those builds are enabled.
 
 One workflow-level concurrency group serializes read/update/save/deploy.
-Even if GitHub replaces a pending run, the next run reconciles both sources.
+Even if GitHub replaces a pending run, the next run reconciles all sources.
 The durable branch is updated before Pages deployment, so failed deployments
 can be retried without losing packages. No cleanup policy deletes old packages.
 Back up `apt-data`: GitHub Releases can be deleted upstream. GitHub file/repository

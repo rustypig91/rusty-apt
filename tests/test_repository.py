@@ -11,7 +11,6 @@ spec = importlib.util.spec_from_file_location('sync', ROOT / 'scripts/sync.py')
 sync = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(sync)
 
-
 def run(*args, **kwargs):
     return subprocess.check_output(args, text=True, **kwargs).strip()
 
@@ -20,7 +19,8 @@ with tempfile.TemporaryDirectory() as temp:
     work = Path(temp)
     site = work / 'site'
     site.mkdir()
-    for package, version in [('pigtail', '1.2.0'), ('pigtail', '1.10.0'), ('canvaz', '1.0.0')]:
+    for package, version in [('pigtail', '1.2.0'), ('pigtail', '1.10.0'),
+                             ('canvaz', '1.0.0'), ('snout', '0.6.0-1')]:
         stage = work / f'{package}-{version}'
         (stage / 'DEBIAN').mkdir(parents=True)
         (stage / 'usr/bin').mkdir(parents=True)
@@ -45,6 +45,7 @@ with tempfile.TemporaryDirectory() as temp:
         index = run('dpkg-scanpackages', '--multiversion', 'pool', '/dev/null', cwd=site)
         assert index.count('Package: pigtail\n') == 2
         assert 'Version: 1.10.0' in index
+        assert 'Package: snout\nVersion: 0.6.0-1\n' in index
         run('dpkg', '--compare-versions', '1.10.0', 'gt', '1.2.0')
         print('PASS: package validation, immutable imports, retained versions and version ordering')
         sys.exit(0)
@@ -59,6 +60,7 @@ with tempfile.TemporaryDirectory() as temp:
     index = (site / 'dists/stable/main/binary-amd64/Packages').read_text()
     assert index.count('Package: pigtail\n') == 2
     assert 'Version: 1.10.0' in index
+    assert 'Package: snout\nVersion: 0.6.0-1\n' in index
     run('dpkg', '--compare-versions', '1.10.0', 'gt', '1.2.0')
     # Isolate APT state completely; no root or system configuration changes.
     state = work / 'apt'
@@ -72,6 +74,6 @@ with tempfile.TemporaryDirectory() as temp:
                '-o', 'Dir::Etc::sourceparts=-', '-o', 'APT::Get::List-Cleanup=0',
                '-o', 'APT::Sandbox::User=' + os.environ.get('USER', 'root')]
     run('apt-get', *options, 'update')
-    simulation = run('apt-get', *options, '--simulate', 'install', 'pigtail', 'canvaz')
-    assert '1.10.0' in simulation and 'canvaz' in simulation
+    simulation = run('apt-get', *options, '--simulate', 'install', 'pigtail', 'canvaz', 'snout')
+    assert '1.10.0' in simulation and 'canvaz' in simulation and 'snout' in simulation
 print('PASS: package validation, immutability, retained versions, signing, APT update and upgrade selection')
