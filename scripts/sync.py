@@ -9,7 +9,11 @@ import tarfile
 import tempfile
 import urllib.request
 
-SOURCES = {'pigtail': 'rustypig91/pigtail-serial-console', 'canvaz': 'rustypig91/canvaz'}
+SOURCES = {
+    'pigtail': 'rustypig91/pigtail-serial-console',
+    'canvaz': 'rustypig91/canvaz',
+    'snout': 'rustypig91/snout-firmware-explorer',
+}
 
 
 def run(*args):
@@ -44,14 +48,25 @@ def ingest(asset, package, root, release_version=None):
     destination.write_bytes(data)
 
 
+def supported_release_version(package, release):
+    if release['draft'] or release['prerelease']:
+        return None
+    match = re.fullmatch(r'v?(\d+)\.(\d+)\.(\d+)', release['tag_name'])
+    if not match:
+        return None
+    # Earlier alpha Snout packages install firmware-gui, not /usr/bin/snout.
+    if package == 'snout' and tuple(map(int, match.groups())) < (0, 6, 0):
+        return None
+    return release['tag_name'].removeprefix('v')
+
+
 def main():
     for package, repository in SOURCES.items():
         pages = json.loads(run('gh', 'api', '--paginate', '--slurp', f'repos/{repository}/releases?per_page=100'))
         for page in pages:
             for release in page:
-                if release['draft'] or release['prerelease']:
-                    continue
-                if not re.fullmatch(r'v?\d+\.\d+\.\d+', release['tag_name']):
+                version = supported_release_version(package, release)
+                if version is None:
                     continue
                 for asset in release['assets']:
                     # Legacy Canvaz assets retain their display-title identity.
@@ -60,7 +75,7 @@ def main():
                     with tempfile.TemporaryDirectory() as temp:
                         path = pathlib.Path(temp) / 'package.deb'
                         urllib.request.urlretrieve(asset['browser_download_url'], path)
-                        ingest(path, package, pathlib.Path('site'), release['tag_name'].removeprefix('v'))
+                        ingest(path, package, pathlib.Path('site'), version)
 
 
 if __name__ == '__main__':
