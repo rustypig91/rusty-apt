@@ -392,3 +392,18 @@ Description: Desktop serial terminal for embedded firmware development.
  plotting of numeric values linked back to the log lines that produced them, and
  continuous capture of raw bytes to disk.
 
+Package: snout
+Version: 0.6.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 17026
+Depends: libc6 (>= 2.35), libwayland-client0, libwayland-cursor0, libwayland-egl1, libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/s/snout/snout_0.6.0-1_amd64.deb
+Size: 5282128
+MD5sum: 0da9f00388a18bc69195cdcfc0861415
+SHA1: 7cc110d44ae3f9db86864952b5e6051792d34b8d
+SHA256: e34833afa10ac82c572aaf47a4d5112df734e3b1aa904d3c0d2c885643362699
+Section: electronics
+Priority: optional
+Description: A desktop explorer for embedded firmware memory usage.
+
