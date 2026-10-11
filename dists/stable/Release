@@ -1,23 +1,23 @@
 Architectures: amd64
 Codename: stable
 Components: main
-Date: Fri, 09 Oct 2026 06:30:45 +0000
+Date: Sun, 11 Oct 2026 18:43:39 +0000
 Label: Rusty
 Origin: Rusty
 Suite: stable
 MD5Sum:
- 81b3523d51fe698eb82d1614e4d12bba              134 Release
- 3834a566c591d1fd566502937c7f8a75            19364 main/binary-amd64/Packages
- 920842a65135a6e871957d7cef764690             3190 main/binary-amd64/Packages.gz
+ bafeec0c7ea5c9b5b50839341f1c9cd8              134 Release
+ dee6a67e8355cb8f416824fef6e819b0            20303 main/binary-amd64/Packages
+ 6ff6029f07911b49b68720f3a78ce9f8             3314 main/binary-amd64/Packages.gz
 SHA1:
- 354d0115a75ad4584485442e36bf286861a3b6b3              134 Release
- d63a1be07b2b98ebedb3e7cfa7dc8ad3f51162ed            19364 main/binary-amd64/Packages
- 4f27a9e0c4ee32d7ce32039ab56ca08fc2c1d6c3             3190 main/binary-amd64/Packages.gz
+ 1142f20db4c2a237756a0fecf30b9e5ea37fee9f              134 Release
+ 7794f726d593654cefc0fa1c0e68c8b2f6dc1f92            20303 main/binary-amd64/Packages
+ fc6a7bda06162061cafa059cb240290ea199be77             3314 main/binary-amd64/Packages.gz
 SHA256:
- 2e3f816c225d99f484e45d009eaeb63447104409b9650702d8ec9776f3323820              134 Release
- ef18f9aea67bbd337e37337429a1a805ee1ba1757801b558cb712b92bd5aa057            19364 main/binary-amd64/Packages
- 8459c0e2f6f086faa69935862a4cd65c569e0a10a4e6f866366cf782add213a9             3190 main/binary-amd64/Packages.gz
+ 4d18bdcf5842e7829396899eaa59d25b1c327470566384963ff478088226f9fc              134 Release
+ 3c1e61fec8ecb2297f9b7f1380063799a63813a5de38da293780d77a58ed9e40            20303 main/binary-amd64/Packages
+ 5a0ee7bbb93cac9d3c18563938bd52035aafd37161c082ec121f3481424323e2             3314 main/binary-amd64/Packages.gz
 SHA512:
- db6a606ddfd1f588817f63246b0dd758b694f6d8cd1e34b4a5418686aed25578d6d3f6228625f61439a7dae28ccb4a8f97f8bf6f70a84464dfa68f098e861c01              134 Release
- b3aa005c63d948f2e31fc227c5985d284c44bcae713f17d70e89ad7a1383a6e528c5b3e6dd55a44f434643252d32ef368c14b5d2ef108548da4825157517b100            19364 main/binary-amd64/Packages
- 4332152e9b09f063769634adfffb276f421d140d2b9dfb011f08e031de5907cb20178d1ba3ec5b8a97f14f842e3643381f1aaccece72b42dfae0cabb221cf7b2             3190 main/binary-amd64/Packages.gz
+ 5ec224eff9e2d40a045b1ab2ac73d8777695e910a019d95022c35f39ab2795e3a54d00cf9504426b6e7ac4a16e9c066c0135912f72e6d4dea05ab07b153504c8              134 Release
+ bda0ea1d1f2275c384abd24927183a22fcf2d0bbc5bb8c20d4787d8bbb353498a921533553e96d85c1bd71212688b6c0051b687f3832fd45cb9705f50f453d72            20303 main/binary-amd64/Packages
+ ce95d62ccd3a90ce355c85d1f43c4d168c13d73723e9905811732c66262118bdaa77599fbc6f023ad69bfa165b9dfdfce4bbed86adc28bbcb363ea3e0181ec96             3314 main/binary-amd64/Packages.gz
