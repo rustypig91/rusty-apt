@@ -49,6 +49,23 @@ Priority: optional
 Description: Rusty's Canvaz - CAN Analyzer: view, decode, plot, and simulate CAN bus traffic
  (none)
 
+Package: canvaz
+Version: 1.0.0
+Architecture: amd64
+Maintainer: Christoffer Zakrisson
+Installed-Size: 9602
+Depends: libwebkit2gtk-4.1-0, libgtk-3-0
+Conflicts: rusty-s-canvaz-can-analyzer
+Replaces: rusty-s-canvaz-can-analyzer
+Filename: pool/main/c/canvaz/canvaz_1.0.0_amd64.deb
+Size: 3422078
+MD5sum: 374b4c169cd1ca969a79ea11974d4472
+SHA1: b3f798ac274c8b4064a77d12b92a4775645b70be
+SHA256: 7b81881e62f5edcbbddb477a723279758226b9b8180da504d6888dab35d05270
+Priority: optional
+Description: Rusty's Canvaz - CAN Analyzer: view, decode, plot, and simulate CAN bus traffic
+ (none)
+
 Package: pigtail
 Version: 0.10.0-1
 Architecture: amd64
