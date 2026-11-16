@@ -626,3 +626,18 @@ Section: electronics
 Priority: optional
 Description: A desktop explorer for embedded firmware memory usage.
 
+Package: snout
+Version: 1.0.0-1
+Architecture: amd64
+Maintainer: Christoffer Zakrisson <rustypig91@gmail.com>
+Installed-Size: 25388
+Depends: libc6 (>= 2.35), libwayland-client0, libwayland-cursor0, libwayland-egl1, libx11-6, libxcursor1, libxi6, libxkbcommon-x11-0, libxkbcommon0, libxrandr2
+Filename: pool/main/s/snout/snout_1.0.0-1_amd64.deb
+Size: 7612316
+MD5sum: 00703e602bce782b0986748a497c017b
+SHA1: 409ed9e19ae290f284a302ed924a789a04d98499
+SHA256: 25d9b84873c58cb36cbeebba6f112e81fa090e8c5412422397231eb0f0add69d
+Section: electronics
+Priority: optional
+Description: A desktop explorer for embedded firmware memory usage.
+
